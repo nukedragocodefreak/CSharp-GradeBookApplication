@@ -13,7 +13,7 @@ namespace GradeBook.GradeBooks
         }
         public override char GetLetterGrade(double averageGrade)
         {
-            
+            return 'a';
         }
     }
 }
