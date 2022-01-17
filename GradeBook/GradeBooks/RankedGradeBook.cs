@@ -18,10 +18,14 @@ namespace GradeBook.GradeBooks
                 throw new  InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
             }
 
-            if ((1 - (averageGrade / Students.Count) * 100) > 80)
+            var value = (int)Math.Ceiling(Students.Count * 0.2);
+            var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
+
+            if (averageGrade >= grades[value - 1])
             {
                 return 'A';
             }
+
             return 'F';
 
         }
