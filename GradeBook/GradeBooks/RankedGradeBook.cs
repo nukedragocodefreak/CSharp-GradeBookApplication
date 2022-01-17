@@ -26,6 +26,16 @@ namespace GradeBook.GradeBooks
                 return 'A';
             }
 
+            if (averageGrade >= grades[value - 1])
+            {
+                return 'A';
+            }
+
+            if (averageGrade >= grades[(value * 2) - 1])
+            {
+                return 'B';
+            }
+
             return 'F';
 
         }
